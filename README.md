@@ -56,9 +56,9 @@ The hero section is custom-engineered for a professional first impression:
 
 2. **Configure Environment Variables**:
    Create a `.env.local` file with the following keys:
-   - `VERCEL_API_KEY`
-   - `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` & `CLERK_SECRET_KEY`
-   - `DATABASE_URL` & `DIRECT_URL` (for Neon DB / Prisma)
+   - `VERCEL_API_KEY`: For deployment synchronization.
+   - `RESEND_API_KEY`: For enabling the contact form mailbox.
+   - `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, etc. (for media logic).
 
 3. **Install & Run**:
    ```bash
