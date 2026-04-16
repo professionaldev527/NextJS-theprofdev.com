@@ -21,7 +21,7 @@ export default function CVPage() {
         },
         jsPDF: { unit: "px", format: [794, 1123], orientation: "portrait", hotfixes: ["px_scaling"] },
         pagebreak: { mode: 'avoid-all' }
-      }
+      } as const;
 
       await html2pdf().set(opt).from(el).save()
     } catch (error) {
