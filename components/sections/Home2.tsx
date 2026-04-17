@@ -12,29 +12,16 @@ export default function Home2() {
 						<div className="box-linear-animation position-relative z-1">
 							<div className="row align-items-end py-60">
 								<div className="col-lg-5 ps-lg-5 text-lg-start text-center">
-									<div className="position-relative mb-lg-0 mb-5 profile-image-container mx-auto" style={{ maxWidth: '510px', aspectRatio: '513 / 462' }}>
+									<div className="position-relative mb-lg-0 mb-5 profile-image-container mx-auto" style={{ maxWidth: '480px' }}>
 										<img 
-											src="assets/imgs/home-page-2/hero-1/kaushik_profile.png" 
+											src="assets/imgs/home-page-2/hero-1/kaushik_flat_hex.png" 
 											alt="Kaushik Adithya E" 
 											className="user-profile-img w-100 h-100"
 											style={{
-												maskImage: "url('assets/imgs/home-page-2/hero-1/people.png')",
-												WebkitMaskImage: "url('assets/imgs/home-page-2/hero-1/people.png')",
-												maskSize: '100% 100%',
-												WebkitMaskSize: '100% 100%',
-												maskRepeat: 'no-repeat',
-												WebkitMaskRepeat: 'no-repeat',
-												objectFit: 'cover',
+												objectFit: 'contain',
 												objectPosition: 'center 15%'
 											}}
 										/>
-										<div className="position-absolute start-50 top-100 translate-middle icon-decorate">
-											<img 
-												src="assets/imgs/home-page-2/hero-1/icon.svg"
-												alt="zelio"
-												style={{ width: '180px', height: 'auto' }} 
-											/>
-										</div>
 									</div>
 								</div>
 								<div className="col-lg-6 mx-lg-auto col-md-12">
@@ -87,9 +74,9 @@ export default function Home2() {
 												<span className="fs-6 text-300 mb-2">...and more</span>
 											</div>
 										</div>
-										<Link href="/cv" className="btn me-2 text-300 ps-0 mt-4">
+										<Link href="/resume" className="btn me-2 ps-0 mt-4" style={{ color: 'white' }}>
 											<i className="ri-download-line text-primary-2" />
-											[ Download my CV ]
+											[ Download my Resume ]
 										</Link>
 									</div>
 								</div>

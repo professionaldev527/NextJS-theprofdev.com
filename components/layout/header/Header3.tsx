@@ -20,7 +20,7 @@ export default function Header3({ scroll, isMobileMenu, handleMobileMenu,isOffCa
 										<Link className="nav-link active" href="#about">About me</Link>
 									</li>
 									<li className="nav-item">
-										<Link className="nav-link" href="#resume">Resume</Link>
+										<Link className="nav-link" href="/resume">Resume</Link>
 									</li>
 									<li className="nav-item">
 										<Link className="nav-link" href="#services">Services</Link>

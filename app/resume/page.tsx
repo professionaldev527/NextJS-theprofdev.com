@@ -19,8 +19,7 @@ export default function CVPage() {
           backgroundColor: "#ffffff",
           logging: false,
         },
-        jsPDF: { unit: "px", format: [794, 1123], orientation: "portrait", hotfixes: ["px_scaling"] },
-        pagebreak: { mode: 'avoid-all' }
+        jsPDF: { unit: "px", format: [794, 1123], orientation: "portrait", hotfixes: ["px_scaling"] }
       };
 
       await html2pdf().set(opt as any).from(el).save()
@@ -35,7 +34,8 @@ export default function CVPage() {
         __html: `
         /* ── Page shell ── */
         .cv-page-shell {
-          background: #0f0f0f;
+          background-color: var(--bs-body-bg);
+          transition: background-color 0.3s ease;
           min-height: 100vh;
           padding: 130px 16px 60px;
         }
@@ -45,6 +45,11 @@ export default function CVPage() {
           display: flex;
           justify-content: space-between;
           align-items: center;
+        }
+        .cv-shell-title {
+          font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+          color: var(--bs-body-color);
+          font-weight: 600;
         }
         /* ── A4 white card — exact 794×1123px ── */
         #cv-printable {
@@ -57,9 +62,10 @@ export default function CVPage() {
           height: 1123px;
           overflow: hidden;
           margin: 0 auto;
-          padding: 45px 50px 30px;
+          padding: 40px 50px 20px;
           box-shadow: 0 8px 48px rgba(0,0,0,0.55);
           border-radius: 2px;
+          box-sizing: border-box;
         }
         /* ── CV typography ── */
         .cv-name  { font-size: 28pt; font-weight: 800; color: #0a0a0a; letter-spacing: -1px; line-height: 1.1; }
@@ -101,32 +107,21 @@ export default function CVPage() {
           #cv-printable { box-shadow: none; width: 100% !important; height: auto !important; }
         }
 
-        /* Professional Profile Masking - Smooth Horizontal Hexagon (Side-to-Side orientation) */
+        /* Professional Profile Masking - Using native image transparency */
         .cv-profile-container {
           position: relative;
-          width: 138px; 
-          height: 112px; /* Side-to-side horizontal orientation */
+          width: 144px; 
+          height: 124px; /* Maintain aspect ratio */
           flex-shrink: 0; 
           margin-right: 25px;
-          overflow: hidden;
-          background: #f0f0f0; 
-          /* Smooth 14-point polygon for a horizontal rounded hexagon (PDF compatible) */
-          clip-path: polygon(
-            25% 0%, 75% 0%, 90% 10%, 98% 35%, 100% 50%, 98% 65%, 90% 90%, 75% 100%, 25% 100%, 10% 90%, 2% 65%, 0% 50%, 2% 35%, 10% 10%
-          );
-          -webkit-clip-path: polygon(
-            25% 0%, 75% 0%, 90% 10%, 98% 35%, 100% 50%, 98% 65%, 90% 90%, 75% 100%, 25% 100%, 10% 90%, 2% 65%, 0% 50%, 2% 35%, 10% 10%
-          );
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
         .cv-profile-img {
           width: 100%;
           height: 100%;
-          object-fit: cover;
-          object-position: center 15%;
-          /* Repeat clip-path on image for robust PDF rendering */
-          clip-path: polygon(
-            25% 0%, 75% 0%, 90% 10%, 98% 35%, 100% 50%, 98% 65%, 90% 90%, 75% 100%, 25% 100%, 10% 90%, 2% 65%, 0% 50%, 2% 35%, 10% 10%
-          );
+          object-fit: contain; /* Ensure the full image fits inside without clipping */
         }
       `}} />
 
@@ -134,7 +129,7 @@ export default function CVPage() {
 
         {/* ── Action bar ── */}
         <div className="cv-action-bar no-print">
-          <span style={{ fontSize: '0.72rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#A8FF53' }}>
+          <span className="cv-shell-title">
             • Curriculum Vitae
           </span>
           <button
@@ -159,11 +154,12 @@ export default function CVPage() {
           {/* Header */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '2.2px solid #129840', paddingBottom: 8, marginBottom: 12 }}>
             <div style={{ display: 'flex', alignItems: 'center', flex: 1 }}>
-              <div className="cv-profile-container">
+              <div className="cv-profile-container" style={{ overflow: 'visible', width: 140, height: 140, borderRadius: 0, marginRight: 24, flexShrink: 0, backgroundColor: 'transparent' }}>
                 <img
-                  src="/assets/imgs/home-page-2/hero-1/kaushik_profile.png"
+                  src="/assets/imgs/home-page-2/hero-1/kaushik_flat_hex.png"
                   alt="Profile"
                   className="cv-profile-img"
+                  style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                 />
               </div>
               <div style={{ marginTop: -2 }}>
@@ -213,7 +209,7 @@ export default function CVPage() {
               </div>
 
               {/* Education */}
-              <div style={{ marginBottom: 18 }}>
+              <div style={{ marginBottom: 12 }}>
                 <div className="cv-label">Education</div>
                 <div className="cv-job-title">Self-Directed Engineering</div>
                 <div className="cv-job-org">Udemy — Full-Stack Curriculum</div>

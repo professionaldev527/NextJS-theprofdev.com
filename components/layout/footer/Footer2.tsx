@@ -20,7 +20,7 @@ export default function Footer2() {
 							</div>
 							<div className="navigation d-flex align-items-center justify-content-center flex-wrap gap-4 my-4">
 								<Link href="/#about" className="fs-5 fw-medium text-white-keep text-decoration-none">About me</Link>
-								<Link href="/#resume" className="fs-5 fw-medium text-white-keep text-decoration-none">Resume</Link>
+								<Link href="/resume" className="fs-5 fw-medium text-white-keep text-decoration-none">Resume</Link>
 								<Link href="/projects" className="fs-5 fw-medium text-white-keep text-decoration-none">Projects</Link>
 								<Link href="/#contact" className="fs-5 fw-medium text-white-keep text-decoration-none">Contact</Link>
 							</div>
