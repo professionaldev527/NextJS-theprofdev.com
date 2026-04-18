@@ -1,7 +1,6 @@
 import ThemeSwitch from '@/components/elements/ThemeSwitch'
 import Link from 'next/link'
 import OffCanvas from '../OffCanvas'
-import MobileMenu from '../MobileMenu'
 
 export default function Header2({ scroll, isMobileMenu, handleMobileMenu, isOffCanvas, handleOffCanvas }: any) {
     return (
@@ -9,54 +8,52 @@ export default function Header2({ scroll, isMobileMenu, handleMobileMenu, isOffC
             <header>
                 <div className="container position-relative">
                     <div className="position-relative">
-                        <nav className="navbar navbar-expand-lg navbar-home-2 flex-nowrap z-999 p-0 border border-1 rounded-3">
-                            <a className="navbar-menu p-4 text-center square-100 menu-tigger icon_80 icon-shape d-none d-md-flex" data-bs-target=".offCanvas__info" aria-controls="offCanvas__info" onClick={handleOffCanvas}>
-                                <i className="ri-menu-2-line" />
-                            </a>
-                            <div className="container py-3 px-4">
-                                <Link className="navbar-brand d-flex main-logo align-items-center" href="/">
+                        <nav className="navbar navbar-expand-lg navbar-home-2 flex-nowrap flex-lg-nowrap flex-wrap z-999 p-0 border border-1 rounded-3">
+                            <style dangerouslySetInnerHTML={{ __html: `
+                                .header-stacked .nav-link { border: none !important; border-bottom: none !important; text-decoration: none !important; box-shadow: none !important; }
+                                .header-stacked .nav-link::before, .header-stacked .nav-link::after { display: none !important; }
+                            `}} />
+                            <div className="container py-2 py-lg-3 px-3 px-lg-4 d-flex flex-wrap align-items-center justify-content-between header-stacked">
+                                
+                                {/* 1. Logo (Left natively, order-1) */}
+                                <Link className="navbar-brand d-flex main-logo align-items-center order-1" href="/">
                                     <img src="assets/imgs/home-page-2/template/favicon.svg" alt="theprofdev" />
                                     <span className="fs-4 ms-2 fw-semibold text-white-keep">theprofdev</span>
                                 </Link>
-                                <div className="d-none d-lg-flex">
-                                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                                            <li className="nav-item">
-                                                <Link className="nav-link fs-5 fw-medium" href="/#about">About me</Link>
-                                            </li>
-                                            <li className="nav-item">
-                                                <Link className="nav-link fs-5 fw-medium" href="/resume">Resume</Link>
-                                            </li>
-                                            <li className="nav-item">
-                                                <Link className="nav-link fs-5 fw-medium" href="/projects">Projects</Link>
-                                            </li>
-                                            <li className="nav-item">
-                                                <Link className="nav-link fs-5 fw-medium" href="/contact">Contact</Link>
-                                            </li>
-                                        </ul>
-                                    </div>
+
+                                {/* 2. Menu Links (Row 2 on Mobile [w-100, order-3], Row 1 on Desktop [w-auto, order-2]) */}
+                                <div className="d-flex w-100 w-lg-auto justify-content-center mt-3 mt-lg-0 order-3 order-lg-2">
+                                    <ul className="navbar-nav d-flex flex-row flex-wrap justify-content-center gap-3 gap-md-4 mb-0" style={{ fontSize: '0.95rem' }}>
+                                        <li className="nav-item">
+                                            <Link className="nav-link fw-medium px-1 px-md-2" href="/#about">About</Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link className="nav-link fw-medium px-1 px-md-2" href="/resume">Resume</Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link className="nav-link fw-medium px-1 px-md-2" href="/projects">Projects</Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link className="nav-link fw-medium px-1 px-md-2" href="/contact">Contact</Link>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <div className="navbar-social d-flex align-items-center pe-5 pe-lg-0 me-5 me-lg-0">
-                                    <div className="d-md-flex d-none gap-4 align-items-center">
-                                        <Link href="https://www.linkedin.com/in/kaushik-adithya-e-2b54a976/" target="_blank" rel="noopener noreferrer">
-                                            <i className="ri-linkedin-fill fs-4 text-white-keep" />
-                                        </Link>
-                                        <Link href="https://github.com/professionaldev527" target="_blank" rel="noopener noreferrer">
-                                            <i className="ri-github-fill fs-4 text-white-keep" />
-                                        </Link>
-                                    </div>
-                                    <div className="burger-icon burger-icon-white border rounded-3 ms-4" onClick={handleMobileMenu}>
-                                        <span className="burger-icon-top" />
-                                        <span className="burger-icon-mid" />
-                                        <span className="burger-icon-bottom" />
-                                    </div>
+
+                                {/* 3. Socials & Theme (Right natively, order-2 on Mobile, order-3 on Desktop) */}
+                                <div className="d-flex justify-content-end align-items-center gap-3 gap-lg-4 order-2 order-lg-3">
+                                    <Link href="https://www.linkedin.com/in/kaushik-adithya-e-2b54a976/" target="_blank" rel="noopener noreferrer">
+                                        <i className="ri-linkedin-fill fs-4 text-white-keep" />
+                                    </Link>
+                                    <Link href="https://github.com/professionaldev527" target="_blank" rel="noopener noreferrer">
+                                        <i className="ri-github-fill fs-4 text-white-keep" />
+                                    </Link>
+                                    <ThemeSwitch />
                                 </div>
                             </div>
-                            <ThemeSwitch />
                         </nav>
+
                     </div>
                     <OffCanvas isOffCanvas={isOffCanvas} handleOffCanvas={handleOffCanvas} />
-                    <MobileMenu isMobileMenu={isMobileMenu} handleMobileMenu={handleMobileMenu} />
                 </div>
             </header>
         </>

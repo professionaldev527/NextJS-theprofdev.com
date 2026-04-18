@@ -5,7 +5,7 @@ export default function ContactPage() {
 	return (
 		<>
 			<Layout headerStyle={2} footerStyle={2}>
-				<div style={{ paddingTop: '100px', minHeight: '80vh' }}>
+				<div style={{ paddingTop: '20px', minHeight: '80vh' }}>
 					<Contact2 />
 				</div>
 			</Layout>

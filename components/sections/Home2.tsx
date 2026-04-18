@@ -6,13 +6,13 @@ export default function Home2() {
 	return (
 		<>
 
-			<section id="about" className="section-hero-2 position-relative pt-130 pb-3">
+			<section id="about" className="section-hero-2 position-relative pt-3 pb-3">
 				<div className="container hero-2">
 					<div className="border border-1 rounded-3">
 						<div className="box-linear-animation position-relative z-1">
 							<div className="row align-items-end py-60">
 								<div className="col-lg-5 ps-lg-5 text-lg-start text-center">
-									<div className="position-relative mb-lg-0 mb-5 profile-image-container mx-auto" style={{ maxWidth: '480px' }}>
+									<div className="position-relative mb-lg-0 mb-5 profile-image-container mx-auto" style={{ maxWidth: '240px' }}>
 										<img 
 											src="assets/imgs/home-page-2/hero-1/kaushik_flat_hex.png" 
 											alt="Kaushik Adithya E" 
@@ -35,7 +35,13 @@ export default function Home2() {
 											</div>
 											&lt;/span&gt;
 										</div>
-										<h1 className="fs-50 my-3">Junior <span className="text-linear-4">{'{'}Full Stack{'}'}</span>Web &amp; App developer<span className="flicker">_</span></h1>
+										<style dangerouslySetInnerHTML={{ __html: `
+											.hero-title { font-size: 50px; font-weight: 700; }
+											@media (max-width: 500px) {
+												.hero-title { font-size: 32px !important; }
+											}
+										`}} />
+										<h1 className="hero-title my-3">Junior <span className="text-linear-4">{'{'}Full Stack{'}'}</span>Web &amp; App developer<span className="flicker">_</span></h1>
 										<p className="mb-6 text-secondary-2">&lt;p&gt;<span className="text-dark">With expertise in cutting-edge technologies such as</span> <span className="text-secondary-2">Next.js (App Router)</span>, <span className="text-secondary-2">TypeScript</span>, <span className="text-secondary-2">Neon DB</span>, and <span className="text-secondary-2">Clerk Auth</span><span className="text-dark">... I deliver web solutions that are both innovative and robust.</span>&lt;/p&gt;</p>
 										<div className="row">
 											<div className="col-7">

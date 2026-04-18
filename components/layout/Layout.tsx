@@ -118,7 +118,13 @@ export default function Layout({ headerStyle, footerStyle, breadcrumbTitle, chil
             {headerStyle == 3 ? <Header3 scroll={scroll} isMobileMenu={isMobileMenu} handleMobileMenu={handleMobileMenu} isOffCanvas={isOffCanvas} handleOffCanvas={handleOffCanvas} /> : null}
             <MobileMenu isMobileMenu={isMobileMenu} handleMobileMenu={handleMobileMenu} />
 
-            <main className="main">
+            <style dangerouslySetInnerHTML={{ __html: `
+                .main-content { padding-top: 115px; }
+                @media (max-width: 991px) {
+                    .main-content { padding-top: 190px; }
+                }
+            `}} />
+            <main className="main main-content">
                 {breadcrumbTitle && <Breadcrumb breadcrumbTitle={breadcrumbTitle} />}
 
                 {children}

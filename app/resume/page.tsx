@@ -37,7 +37,7 @@ export default function CVPage() {
           background-color: var(--bs-body-bg);
           transition: background-color 0.3s ease;
           min-height: 100vh;
-          padding: 130px 16px 60px;
+          padding: 20px 16px 60px;
         }
         .cv-action-bar {
           max-width: 860px;
@@ -66,6 +66,21 @@ export default function CVPage() {
           box-shadow: 0 8px 48px rgba(0,0,0,0.55);
           border-radius: 2px;
           box-sizing: border-box;
+        }
+
+        /* ── Mobile Full-View Scale ── */
+        @media screen and (max-width: 768px) {
+          .cv-page-shell {
+            padding: 10px 4px 60px !important;
+          }
+          .cv-action-bar {
+            padding: 0 16px;
+          }
+          #cv-printable {
+            zoom: 0.46;
+            -moz-transform: scale(0.46);
+            -moz-transform-origin: top left;
+          }
         }
         /* ── CV typography ── */
         .cv-name  { font-size: 28pt; font-weight: 800; color: #0a0a0a; letter-spacing: -1px; line-height: 1.1; }
@@ -149,7 +164,8 @@ export default function CVPage() {
         </div>
 
         {/* ── A4 CV card ── */}
-        <div id="cv-printable">
+        <div style={{ width: '100%', overflowX: 'hidden', paddingBottom: '30px' }}>
+          <div id="cv-printable">
 
           {/* Header */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '2.2px solid #129840', paddingBottom: 8, marginBottom: 12 }}>
@@ -316,6 +332,7 @@ export default function CVPage() {
 
             </div>
           </div>
+        </div>
         </div>
       </div>
     </Layout>
