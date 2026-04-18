@@ -37,7 +37,7 @@ export default function CVPage() {
           background-color: var(--bs-body-bg);
           transition: background-color 0.3s ease;
           min-height: 100vh;
-          padding: 20px 16px 60px;
+          padding: 0 16px 60px;
         }
         .cv-action-bar {
           max-width: 860px;
@@ -71,7 +71,7 @@ export default function CVPage() {
         /* ── Mobile Full-View Scale ── */
         @media screen and (max-width: 768px) {
           .cv-page-shell {
-            padding: 10px 4px 60px !important;
+            padding: 0 4px 60px !important;
           }
           .cv-action-bar {
             padding: 0 16px;

@@ -158,7 +158,7 @@ export default async function ProjectsPage() {
 			`}} />
 			<Layout headerStyle={2} footerStyle={2}>
 				<div>
-					<section className="section-projects-list pt-3 pb-120">
+					<section className="section-projects-list pt-0 pb-120">
 						<div className="container">
 							<div className="row text-center mb-80">
 								<div className="col-lg-10 mx-auto">

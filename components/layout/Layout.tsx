@@ -119,9 +119,9 @@ export default function Layout({ headerStyle, footerStyle, breadcrumbTitle, chil
             <MobileMenu isMobileMenu={isMobileMenu} handleMobileMenu={handleMobileMenu} />
 
             <style dangerouslySetInnerHTML={{ __html: `
-                .main-content { padding-top: 115px; }
+                .main-content { padding-top: 135px; }
                 @media (max-width: 991px) {
-                    .main-content { padding-top: 190px; }
+                    .main-content { padding-top: 185px; }
                 }
             `}} />
             <main className="main main-content">

@@ -6,13 +6,17 @@ export default function Home2() {
 	return (
 		<>
 
-			<section id="about" className="section-hero-2 position-relative pt-3 pb-3">
+			<section id="about" className="section-hero-2 position-relative pt-0 pb-3">
 				<div className="container hero-2">
 					<div className="border border-1 rounded-3">
 						<div className="box-linear-animation position-relative z-1">
 							<div className="row align-items-end py-60">
 								<div className="col-lg-5 ps-lg-5 text-lg-start text-center">
-									<div className="position-relative mb-lg-0 mb-5 profile-image-container mx-auto" style={{ maxWidth: '240px' }}>
+									<div className="position-relative mb-lg-0 mb-5 profile-image-container mx-auto hero-profile-frame">
+                                        <style dangerouslySetInnerHTML={{ __html: `
+                                            .hero-profile-frame { max-width: 510px; width: 100%; }
+                                            @media (max-width: 991px) { .hero-profile-frame { max-width: 240px; } }
+                                        `}} />
 										<img 
 											src="assets/imgs/home-page-2/hero-1/kaushik_flat_hex.png" 
 											alt="Kaushik Adithya E" 
