@@ -27,7 +27,7 @@ export default function Footer1() {
                                 <Link href="/blog-list" className="fs-5">
                                     Blog
                                 </Link>
-                                <Link href="/#contact" className="fs-5">
+                                <Link href="/contact" className="fs-5">
                                     Contact
                                 </Link>
                             </div>

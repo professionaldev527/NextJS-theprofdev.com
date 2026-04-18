@@ -31,7 +31,7 @@ export default function Header2({ scroll, isMobileMenu, handleMobileMenu, isOffC
                                                 <Link className="nav-link fs-5 fw-medium" href="/projects">Projects</Link>
                                             </li>
                                             <li className="nav-item">
-                                                <Link className="nav-link fs-5 fw-medium" href="/#contact">Contact</Link>
+                                                <Link className="nav-link fs-5 fw-medium" href="/contact">Contact</Link>
                                             </li>
                                         </ul>
                                     </div>

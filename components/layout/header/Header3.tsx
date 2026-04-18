@@ -32,7 +32,7 @@ export default function Header3({ scroll, isMobileMenu, handleMobileMenu,isOffCa
 										<Link className="nav-link" href="#blog">Blog</Link>
 									</li>
 									<li className="nav-item">
-										<Link className="nav-link" href="#contact">Contact</Link>
+										<Link className="nav-link" href="/contact">Contact</Link>
 									</li>
 								</ul>
 							</div>

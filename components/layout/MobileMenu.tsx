@@ -34,7 +34,7 @@ export default function MobileMenu({ isMobileMenu, handleMobileMenu }: any) {
 											<Link className="nav-link" href="/projects">Projects</Link>
 										</li>
 										<li className="nav-item">
-											<Link className="nav-link" href="/#contact">Contact</Link>
+											<Link className="nav-link" href="/contact" onClick={handleMobileMenu}>Contact</Link>
 										</li>
 									</ul>
 								</nav>

@@ -1,5 +1,5 @@
 import Layout from "@/components/layout/Layout"
-import Contact2 from '@/components/sections/Contact2'
+
 import Coporation2 from "@/components/sections/Coporation2"
 import Experience2 from "@/components/sections/Experience2"
 import Home2 from "@/components/sections/Home2"
@@ -20,7 +20,7 @@ export default function Home() {
 				<Experience2 />
 				<Projects2 />
 				<Skills2 />
-				<Contact2 />
+
 			</Layout>
 		</>
 	)

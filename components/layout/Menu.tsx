@@ -33,7 +33,7 @@ export default function Menu() {
 					</Link>
 				</li>
 				<li className="nav-item">
-					<Link href="/#contact" className={pathname === "#contact" ? "nav-link active" : "nav-link"}>
+					<Link href="/contact" className={pathname === "/contact" ? "nav-link active" : "nav-link"}>
 						Contact
 					</Link>
 				</li>
