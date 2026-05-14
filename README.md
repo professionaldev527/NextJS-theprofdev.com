@@ -7,7 +7,13 @@
 A high-performance, engineering-first portfolio showcase built with **Next.js 16 (App Router)** and **TypeScript**. Optimized for the Vercel edge runtime, this project features dynamic GitHub integration, real-time production snapshots, and refined professional aesthetics.
 
 ---
+## 🚀 Live Demo
 
+Experience the live application through the following links:
+
+* **Primary Domain:** [cloudinary.theprofdev.com](https://www.theprofdev.com)
+
+---
 ## 🚀 Architectural Core
 
 - **Framework**: Next.js 16.1.1 (App Router) with React 19.
