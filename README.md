@@ -11,7 +11,7 @@ A high-performance, engineering-first portfolio showcase built with **Next.js 16
 
 Experience the live application through the following links:
 
-* **Primary Domain:** [cloudinary.theprofdev.com](https://www.theprofdev.com)
+* **Primary Domain:** [https://theprofdev.com](https://theprofdev.com)
 
 ---
 ## 🚀 Architectural Core
