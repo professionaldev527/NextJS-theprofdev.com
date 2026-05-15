@@ -180,7 +180,7 @@ export default function CVPage() {
               </div>
               <div style={{ marginTop: -2 }}>
                 <div className="cv-name">Kaushik Adithya E</div>
-                <div className="cv-role">Junior Full-Stack Developer &amp; Deployment Specialist</div>
+                <div className="cv-role">Full-Stack Developer &amp; Deployment Specialist</div>
               </div>
             </div>
             <div className="cv-contact-block" style={{ marginLeft: 30, flexShrink: 0 }}>

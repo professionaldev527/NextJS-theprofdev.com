@@ -84,8 +84,8 @@ async function getProjects() {
 		});
 		if (!res.ok) return [];
 		const repos = await res.json();
-		return repos
-			.filter((repo: any) => !repo.fork && repo.name !== "professionaldev527")
+		const sortedRepos = repos
+			.filter((repo: any) => !repo.fork && repo.name !== "professionaldev527" && repo.homepage)
 			.sort((a: any, b: any) => {
 				const hasMetaA = !!projectMetadata[a.name];
 				const hasMetaB = !!projectMetadata[b.name];
@@ -95,8 +95,10 @@ async function getProjects() {
 					return b.stargazers_count - a.stargazers_count;
 				}
 				return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
-			})
-			.slice(0, 15);
+			});
+
+		const todoIndex = sortedRepos.findIndex((r: any) => r.name === 'Next.js-TodoMaster-Clerk-NeonDB-PostgreSQL');
+		return todoIndex !== -1 ? sortedRepos.slice(0, todoIndex + 1) : sortedRepos.slice(0, 15);
 	} catch (error) {
 		console.error("Error fetching projects:", error);
 		return [];

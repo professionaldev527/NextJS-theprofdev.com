@@ -6,7 +6,7 @@ export default function Skills2() {
 	return (
 		<>
 
-			<section id="skills" className="section-skills-2 pt-5">
+			<section id="skills" className="section-skills-2 pt-5 pb-60">
 				<div className="container">
 					<div className="rounded-3 bg-3 border border-1 position-relative overflow-hidden">
 						<div className="position-relative z-1 py-60">

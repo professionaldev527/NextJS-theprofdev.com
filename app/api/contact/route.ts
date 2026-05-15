@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
               <p style="margin-top: 35px; font-size: 15px; color: #444444;">
                 Best regards,<br/>
                 <strong>Kaushik Adithya E</strong><br/>
-                <span style="color: #888; font-size: 13px;">Junior Full-Stack Developer</span>
+                <span style="color: #888; font-size: 13px;">Full-Stack Developer</span>
               </p>
             </div>
           </div>

@@ -4,7 +4,7 @@ export default function Footer2() {
 		<>
 			<footer style={{ background: '#111114' }}>
 				<div className="section-footer-2 position-relative">
-					<div className="container position-relative z-1 border-top border-1 pb-2 pt-4">
+					<div className="container position-relative z-1 pb-2 pt-4">
 						<div className="text-center">
 							<Link className="d-flex main-logo align-items-center justify-content-center mb-3 text-decoration-none" href="/">
 								<img src="assets/imgs/home-page-2/template/favicon.svg" alt="theprofdev" style={{ width: '40px', height: '40px' }} />
