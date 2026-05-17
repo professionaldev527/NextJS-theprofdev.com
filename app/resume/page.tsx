@@ -229,7 +229,7 @@ export default function CVPage() {
                 <div className="cv-label">Education</div>
                 <div className="cv-job-title">Self-Directed Engineering</div>
                 <div className="cv-job-org">Udemy — Full-Stack Curriculum</div>
-                <div className="cv-job-date">2024 – 2025</div>
+                <div className="cv-job-date">2020 – 2021</div>
                 <p className="cv-job-body" style={{ marginTop: 4, marginBottom: 0 }}>
                   Intensive project-based development covering Node.js, Express, PostgreSQL, React, and Next.js with real-world deliverables.
                 </p>
@@ -258,7 +258,7 @@ export default function CVPage() {
                     <div className="cv-job-title">Full-Stack Developer — Freelance</div>
                     <div className="cv-job-org">Independent / Remote</div>
                   </div>
-                  <span className="cv-job-date">2025 – Present</span>
+                  <span className="cv-job-date">2026 – Present</span>
                 </div>
                 <ul className="cv-job-body" style={{ paddingLeft: 16, marginTop: 6, marginBottom: 0 }}>
                   <li>Architect and deploy full-stack apps with Next.js & TypeScript.</li>
@@ -271,15 +271,15 @@ export default function CVPage() {
 
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
                   <div>
-                    <div className="cv-job-title">Self-Taught Developer — Learning Phase</div>
+                    <div className="cv-job-title">Full-Stack Developer — ESHOP</div>
                     <div className="cv-job-org">Udemy &amp; Personal Projects</div>
                   </div>
-                  <span className="cv-job-date">2024 – 2025</span>
+                  <span className="cv-job-date">2021 – 2025</span>
                 </div>
                 <ul className="cv-job-body" style={{ paddingLeft: 16, marginTop: 6, marginBottom: 0 }}>
-                  <li>Completed backend engineering: Node.js, REST APIs, and auth.</li>
-                  <li>Built and shipped 10+ projects across React and Next.js.</li>
-                  <li>Progressed to production full-stack apps in under a year.</li>
+                  <li>Managed reliable APIs to handle core application data.</li>
+                  <li>Integrated third-party services to expand system functionality.</li>
+                  <li>Improved system reliability by implementing robust error handling.</li>
                 </ul>
               </div>
 

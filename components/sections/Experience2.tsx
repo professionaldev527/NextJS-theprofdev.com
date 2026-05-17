@@ -17,7 +17,7 @@ export default function Experience2() {
 									<span className="text-linear-4 d-flex align-items-center"> Experience </span>
 								</div>
 								<h3>
-									+2
+									+5
 									<span className="text-300">years of </span>
 									passion
 									<span className="text-300">
@@ -33,7 +33,16 @@ export default function Experience2() {
 													<div className="icon-shape bg-primary-2 rounded-circle p-2 text-dark fw-bold">F</div>
 													<div className="d-flex flex-column ms-2">
 														<h5 className="mb-1 text-dark">Freelance</h5>
-														<span className="text-300">2025 - Present</span>
+														<span className="text-300">2026 - Present</span>
+													</div>
+												</div>
+											</Link>
+											<Link href="#" className="technology border border-1 rounded-3 p-3 text-decoration-none">
+												<div className="d-flex align-items-center gap-2">
+													<div className="icon-shape bg-primary-2 rounded-circle p-2 text-dark fw-bold">E</div>
+													<div className="d-flex flex-column ms-2">
+														<h5 className="mb-1 text-dark">ESHOP</h5>
+														<span className="text-300">2021 - 2026</span>
 													</div>
 												</div>
 											</Link>
@@ -42,7 +51,7 @@ export default function Experience2() {
 													<div className="icon-shape bg-secondary-2 rounded-circle p-2 text-white fw-bold">U</div>
 													<div className="d-flex flex-column ms-2">
 														<h5 className="mb-1 text-dark">Udemy (Self-Taught)</h5>
-														<span className="text-300">2024 - 2025</span>
+														<span className="text-300">2020 - 2021</span>
 													</div>
 												</div>
 											</Link>

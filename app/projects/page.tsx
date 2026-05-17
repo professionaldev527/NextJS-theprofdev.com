@@ -9,7 +9,8 @@ const projectMetadata: Record<string, any> = {
 		frontend: 'Next.js 14, Tailwind CSS, Framer Motion',
 		backend: 'Node.js, Express, Next API Routes',
 		database: 'MongoDB (Atlas)',
-		image: '/assets/imgs/portfolio/medically_live.png'
+		image: '/assets/imgs/portfolio/medically_live.png',
+		liveDemoUrl: 'https://medically.theprofdev.com/'
 	},
 	'NextJS-Cloudinary-Prisma-NeonDB': {
 		displayName: 'Cloudinary Media Manager',
@@ -17,7 +18,8 @@ const projectMetadata: Record<string, any> = {
 		frontend: 'React, Tailwind CSS, Radix UI',
 		backend: 'Next.js Server Actions, Prisma ORM',
 		database: 'Neon DB (Serverless PostgreSQL)',
-		image: '/assets/imgs/portfolio/cloudinary_live.png'
+		image: '/assets/imgs/portfolio/cloudinary_live.png',
+		liveDemoUrl: 'https://cloudinary.theprofdev.com/'
 	},
 	'Next.js-TodoMaster-Clerk-NeonDB-PostgreSQL': {
 		displayName: 'Todo Master Pro',
@@ -25,7 +27,8 @@ const projectMetadata: Record<string, any> = {
 		frontend: 'Next.js 14, TypeScript, Shadcn UI',
 		backend: 'Clerk Authentication, Serverless Functions',
 		database: 'Neon DB (PostgreSQL)',
-		image: '/assets/imgs/portfolio/todo_live.png'
+		image: '/assets/imgs/portfolio/todo_live.png',
+		liveDemoUrl: 'https://todo-master.theprofdev.com/'
 	},
 	'next.js-appwrite-stackoverflow': {
 		displayName: 'Stack Overflow Clone (Appwrite)',
@@ -87,8 +90,14 @@ async function getProjects() {
 		const sortedRepos = repos
 			.filter((repo: any) => !repo.fork && repo.name !== "professionaldev527" && repo.homepage)
 			.sort((a: any, b: any) => {
-				const hasMetaA = !!projectMetadata[a.name];
-				const hasMetaB = !!projectMetadata[b.name];
+				const metaKeys = Object.keys(projectMetadata);
+				const indexA = metaKeys.indexOf(a.name);
+				const indexB = metaKeys.indexOf(b.name);
+				
+				const hasMetaA = indexA !== -1;
+				const hasMetaB = indexB !== -1;
+				
+				if (hasMetaA && hasMetaB) return indexA - indexB;
 				if (hasMetaA !== hasMetaB) return hasMetaA ? -1 : 1;
 				
 				if (b.stargazers_count !== a.stargazers_count) {
@@ -97,8 +106,8 @@ async function getProjects() {
 				return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
 			});
 
-		const todoIndex = sortedRepos.findIndex((r: any) => r.name === 'Next.js-TodoMaster-Clerk-NeonDB-PostgreSQL');
-		return todoIndex !== -1 ? sortedRepos.slice(0, todoIndex + 1) : sortedRepos.slice(0, 15);
+		const passwordIndex = sortedRepos.findIndex((r: any) => r.name === 'react-password-generator');
+		return passwordIndex !== -1 ? sortedRepos.slice(0, passwordIndex + 1) : sortedRepos;
 	} catch (error) {
 		console.error("Error fetching projects:", error);
 		return [];
@@ -186,7 +195,7 @@ export default async function ProjectsPage() {
 								{projects.length > 0 ? (
 									projects.map((project: any) => {
 										const meta = projectMetadata[project.name] || {};
-										const hasDemo = !!project.homepage;
+										const hasDemo = !!meta.liveDemoUrl || !!project.homepage;
 										const projectImage = getProjectImage(project, meta);
 
 										return (
@@ -254,7 +263,7 @@ export default async function ProjectsPage() {
 																		Source Code
 																	</Link>
 																	{hasDemo && (
-																		<Link href={project.homepage} target="_blank" className="btn btn-green-gradient d-flex align-items-center justify-content-center gap-2 px-4 py-3 rounded-3 hover-up fs-7">
+																		<Link href={meta.liveDemoUrl || project.homepage} target="_blank" className="btn btn-green-gradient d-flex align-items-center justify-content-center gap-2 px-4 py-3 rounded-3 hover-up fs-7">
 																			<i className="ri-external-link-line fs-4" />
 																			Live Demo
 																		</Link>
