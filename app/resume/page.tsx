@@ -272,7 +272,7 @@ export default function CVPage() {
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
                   <div>
                     <div className="cv-job-title">Full-Stack Developer — ESHOP</div>
-                    <div className="cv-job-org">Udemy &amp; Personal Projects</div>
+                    <div className="cv-job-org">Work From Home</div>
                   </div>
                   <span className="cv-job-date">2021 – 2025</span>
                 </div>
